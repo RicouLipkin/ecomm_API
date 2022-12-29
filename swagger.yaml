@@ -1,0 +1,597 @@
+openapi: 3.0.3
+info:
+  title: Swagger Ecommerce - OpenAPI 3.0
+  description: This is a sample Ecommerce Server based on the OpenAPI 3.0 specification.
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  version: 1.0.0
+servers:
+- url: /
+paths:
+  /users:
+    summary: Everything regarding users
+    get:
+      tags:
+      - Users
+      summary: List all users from database
+      description: ""
+      operationId: ""
+      responses:
+        default:
+          description: Default error sample response
+      x-swagger-router-controller: Users
+    post:
+      tags:
+      - Users
+      summary: Create a new user into the database
+      description: ""
+      operationId: ""
+      requestBody:
+        description: The user to create.
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/users_body'
+      responses:
+        default:
+          description: Default error sample response
+      x-swagger-router-controller: Users
+  /users/{id}:
+    summary: Everything regarding a particular user identified by his user id.
+    get:
+      tags:
+      - Users
+      summary: Detail of a specific user by ID
+      description: ""
+      operationId: ""
+      responses:
+        default:
+          description: Default error sample response
+      x-swagger-router-controller: Users
+    put:
+      tags:
+      - Users
+      summary: Update an existing user
+      description: ""
+      operationId: ""
+      parameters:
+      - name: id
+        in: path
+        description: The user ID.
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: integer
+      requestBody:
+        description: The user to create.
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/users_id_body'
+      responses:
+        default:
+          description: Default error sample response
+      x-swagger-router-controller: Users
+    delete:
+      tags:
+      - Users
+      summary: Delete a user by his user id.
+      description: ""
+      operationId: ""
+      parameters:
+      - name: id
+        in: path
+        description: The user ID.
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: integer
+      responses:
+        default:
+          description: Default error sample response
+      x-swagger-router-controller: Users
+  /orders:
+    summary: Everything about orders made.
+    get:
+      tags:
+      - Orders
+      summary: List all orders.
+      description: ""
+      operationId: ""
+      responses:
+        default:
+          description: Default error sample response
+      x-swagger-router-controller: Orders
+    post:
+      tags:
+      - Orders
+      summary: Create a new order.
+      description: ""
+      operationId: ""
+      requestBody:
+        description: The user to create.
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/orders_body'
+      responses:
+        default:
+          description: Default error sample response
+      x-swagger-router-controller: Orders
+  /orders/{id}:
+    summary: Details about a specific order with his order id.
+    get:
+      tags:
+      - Orders
+      summary: Details of a specific order by ID.
+      description: ""
+      operationId: ""
+      responses:
+        default:
+          description: Default error sample response
+      x-swagger-router-controller: Orders
+    put:
+      tags:
+      - Orders
+      summary: Update an existing order by order id.
+      description: ""
+      operationId: ""
+      parameters:
+      - name: id
+        in: path
+        description: The order ID.
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: integer
+      requestBody:
+        description: The user to create.
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/orders_id_body'
+      responses:
+        default:
+          description: Default error sample response
+      x-swagger-router-controller: Orders
+    delete:
+      tags:
+      - Orders
+      summary: Delete an existing order by order id.
+      description: ""
+      operationId: ""
+      parameters:
+      - name: id
+        in: path
+        description: The order ID.
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: integer
+      responses:
+        default:
+          description: Default error sample response
+      x-swagger-router-controller: Orders
+  /products:
+    summary: Everything about products.
+    get:
+      tags:
+      - Products
+      summary: List all products in store.
+      description: ""
+      operationId: ""
+      responses:
+        default:
+          description: Default error sample response
+      x-swagger-router-controller: Products
+    post:
+      tags:
+      - Products
+      summary: Create a new product.
+      description: ""
+      operationId: ""
+      requestBody:
+        description: The user to create.
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/products_body'
+      responses:
+        default:
+          description: Default error sample response
+      x-swagger-router-controller: Products
+  /products/{id}:
+    summary: Details about a specific product with his product id.
+    get:
+      tags:
+      - Products
+      summary: Details of a specific product by ID.
+      description: ""
+      operationId: ""
+      responses:
+        default:
+          description: Default error sample response
+      x-swagger-router-controller: Products
+    put:
+      tags:
+      - Products
+      summary: Update an existing product with his product id.
+      description: ""
+      operationId: ""
+      parameters:
+      - name: id
+        in: path
+        description: The product ID.
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: integer
+      requestBody:
+        description: The user to create.
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/products_id_body'
+      responses:
+        default:
+          description: Default error sample response
+      x-swagger-router-controller: Products
+    delete:
+      tags:
+      - Products
+      summary: Delete an existing product with his product id.
+      description: ""
+      operationId: ""
+      parameters:
+      - name: id
+        in: path
+        description: The product ID.
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: integer
+      responses:
+        default:
+          description: Default error sample response
+      x-swagger-router-controller: Products
+  /carts:
+    summary: Everything about carts.
+    get:
+      tags:
+      - Carts
+      summary: List all the carts.
+      description: ""
+      operationId: ""
+      responses:
+        default:
+          description: Default error sample response
+      x-swagger-router-controller: Carts
+    post:
+      tags:
+      - Carts
+      summary: Create a new cart.
+      description: ""
+      operationId: ""
+      requestBody:
+        description: The user to create.
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/carts_body'
+      responses:
+        default:
+          description: Default error sample response
+      x-swagger-router-controller: Carts
+  /carts/{id}:
+    summary: Details about a specific cart with his cart id.
+    put:
+      tags:
+      - Carts
+      summary: Update an existing cart with his cart id.
+      description: ""
+      operationId: ""
+      parameters:
+      - name: id
+        in: path
+        description: The cart ID.
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: integer
+      requestBody:
+        description: The user to create.
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/carts_id_body'
+      responses:
+        default:
+          description: Default error sample response
+      x-swagger-router-controller: Carts
+    delete:
+      tags:
+      - Carts
+      summary: Delete an existing cart with his cart id.
+      description: ""
+      operationId: ""
+      parameters:
+      - name: id
+        in: path
+        description: The cart ID.
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: integer
+      responses:
+        default:
+          description: Default error sample response
+      x-swagger-router-controller: Carts
+  /carts/{id}/items:
+    summary: List all the items of a specific cart.
+    get:
+      tags:
+      - Carts
+      summary: List all the items in a cart filtered by cart id.
+      description: ""
+      operationId: ""
+      parameters:
+      - name: id
+        in: path
+        description: The cart ID.
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: integer
+      responses:
+        default:
+          description: Default error sample response
+      x-swagger-router-controller: Carts
+  /orders/{id}/items:
+    summary: Get all the items in a specific order by order id.
+    get:
+      tags:
+      - Orders
+      summary: List all of the items of an order filtered by his order id.
+      description: ""
+      operationId: ""
+      parameters:
+      - name: id
+        in: path
+        description: The order ID.
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: integer
+      responses:
+        default:
+          description: Default error sample response
+      x-swagger-router-controller: Orders
+  /products/{id}/orders:
+    summary: List all the orders containing the product selected by product id.
+    get:
+      tags:
+      - Products
+      summary: List all the orders containing the product define by his product id.
+      description: ""
+      operationId: ""
+      parameters:
+      - name: id
+        in: path
+        description: The product ID.
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: integer
+      responses:
+        default:
+          description: Default error sample response
+      x-swagger-router-controller: Products
+  /products/{id}/carts:
+    summary: List all the carts containing the product selected by product id.
+    get:
+      tags:
+      - Products
+      summary: ""
+      description: List all the carts containing the product define by his product
+        id.
+      operationId: ""
+      parameters:
+      - name: id
+        in: path
+        description: The product ID.
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: integer
+      responses:
+        default:
+          description: Default error sample response
+      x-swagger-router-controller: Products
+  /users/{id}/orders:
+    summary: List all the orders of a user selected by user id.
+    get:
+      tags:
+      - Users
+      summary: List of all orders from a specific user by user id
+      description: ""
+      operationId: ""
+      parameters:
+      - name: id
+        in: path
+        description: The user ID.
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: integer
+      responses:
+        default:
+          description: Default error sample response
+      x-swagger-router-controller: Users
+  /users/{id}/carts:
+    summary: List all the carts of a user selected by user id.
+    get:
+      tags:
+      - Users
+      summary: Cart details of a specific user by user id
+      description: ""
+      operationId: ""
+      parameters:
+      - name: id
+        in: path
+        description: The user ID.
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: integer
+      responses:
+        default:
+          description: Default error sample response
+      x-swagger-router-controller: Users
+components:
+  schemas:
+    orders_body:
+      required:
+      - status
+      - total_price
+      - user_id
+      type: object
+      properties:
+        total_price:
+          type: number
+          format: double
+        status:
+          type: string
+        user_id:
+          type: integer
+    products_body:
+      required:
+      - description
+      - name
+      - price
+      type: object
+      properties:
+        name:
+          type: string
+        description:
+          type: string
+        price:
+          type: number
+          format: double
+    users_body:
+      required:
+      - email
+      - firstname
+      - lastname
+      - password
+      type: object
+      properties:
+        email:
+          type: string
+        password:
+          type: string
+        firstname:
+          type: string
+        lastname:
+          type: string
+    users_id_body:
+      type: object
+      properties:
+        email:
+          type: string
+        password:
+          type: string
+        firstname:
+          type: string
+        lastname:
+          type: string
+    carts_id_body:
+      type: object
+      properties:
+        total_price:
+          type: number
+          format: double
+        user_id:
+          type: integer
+    products_id_body:
+      type: object
+      properties:
+        name:
+          type: string
+        description:
+          type: string
+        price:
+          type: number
+          format: double
+    orders_id_body:
+      type: object
+      properties:
+        total_price:
+          type: number
+          format: double
+        status:
+          type: string
+        user_id:
+          type: integer
+    carts_body:
+      required:
+      - total_price
+      - user_id
+      type: object
+      properties:
+        total_price:
+          type: number
+          format: double
+        user_id:
+          type: integer
+  parameters:
+    user_id:
+      name: id
+      in: path
+      description: The user ID.
+      required: true
+      style: simple
+      explode: false
+      schema:
+        type: integer
+    order_id:
+      name: id
+      in: path
+      description: The order ID.
+      required: true
+      style: simple
+      explode: false
+      schema:
+        type: integer
+    product_id:
+      name: id
+      in: path
+      description: The product ID.
+      required: true
+      style: simple
+      explode: false
+      schema:
+        type: integer
+    cart_id:
+      name: id
+      in: path
+      description: The cart ID.
+      required: true
+      style: simple
+      explode: false
+      schema:
+        type: integer
