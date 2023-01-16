@@ -4,7 +4,7 @@ const orderRouter = require ('./order');
 const productRouter = require ('./product.js');
 const userRouter = require ('./user');
 const authRouter = require ('./auth');
-const docsRouter = require ('./docs')
+const docsRouter = require ('./docs');
 
 function checkAuthenticated (req,res,next){
     console.log(req.isAuthenticated())
